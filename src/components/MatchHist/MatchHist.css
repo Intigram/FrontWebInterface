@@ -1,0 +1,59 @@
+.MatchHist {
+    height: 73vh !important;
+    /* border: red 3px solid !important; */
+}
+
+.MatchPanel {
+    top: 0px;
+    height: 67vh !important;
+    border: black 2px solid !important;
+    box-shadow: 6px 6px black;
+    border-radius: 15px;
+    background-color: rgba(255, 255, 255, 0.8) !important;
+}
+
+.MatchPanelNot {
+    top: 0px;
+    height: 67vh !important;
+    border: none !important;
+    box-shadow: none !important;
+    border-radius: 15px;
+    background-color: transparent !important;
+}
+
+.vertical-center {
+    margin: 0;
+    align-items: center;
+    align-content: center;
+    text-align: center;
+    position: relative;
+    top: 45%;
+    /* -ms-transform: translateY(-50%);
+    transform: translateY(-50%); */
+}
+
+.page-cntr.btn:disabled  {
+    border: none !important;
+    background-color: transparent !important;
+    color: black !important;
+    box-shadow: none;
+    width: auto;
+}
+
+.btn-group .btn {
+    background-color:transparent !important;
+    border:none;
+    box-shadow: none;
+    width: auto;
+}
+
+.btn-group .btn:hover {
+    /* background-color: aquamarine; */
+    border:solid 0.5px black;
+    color: gray;
+    box-shadow: 1px 1px grey;
+}
+
+.alert {
+    width: 35vw;
+}

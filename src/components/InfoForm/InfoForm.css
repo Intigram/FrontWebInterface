@@ -1,0 +1,26 @@
+.form-control {
+    box-shadow: 2px 2px black !important;
+}
+
+.btn {
+    border:none;
+    margin-top: 5%;
+    border:solid 2px black;
+    border-radius: 15px;
+    background: rgba(255, 255, 255,0);
+    background-color:aquamarine;
+    color: black;
+    box-shadow: 6px 6px black;
+}
+
+.btn:hover {
+    background-color: aquamarine;
+    border:solid 2px black;
+    color: gray;
+    box-shadow: 4px 4px 2px grey;
+}
+
+.InfoForm {
+    justify-content: start;
+    display: grid;
+}
