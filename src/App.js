@@ -7,18 +7,20 @@ import { faGithub } from "@fortawesome/free-brands-svg-icons";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import InfoForm from './components/InfoForm/InfoForm';
 import MatchHist from './components/MatchHist/MatchHist';
-import ak from "./api";
+import config from './config';
+// import ak from "./api";
 
 function App() {
   const [summonerName, setSummonerName] = useState("");
   const [region, setRegion]             = useState("");
-  const apiKey                          = ak;
+  const apiKey                          = config["api_key"];
   const [matchIds, setMatchIds]         = useState([]);
   const [matches, setMatches]           = useState([]);
   const [timelines, setTimelines]       = useState([]);
-  const [stage, setStage]               = useState("No matches retrieved")
+  const [stage, setStage]               = useState("No matches retrieved");
   const [page, setPage]                 = useState(0);
   const [predictions, setPredictions]   = useState([]);
+  const [tagline, setTagline]           = useState("");
 
   return (
     <div className="App align-items-center w-100">
@@ -38,13 +40,14 @@ function App() {
         </Row>
       </header>
 
-      <Container>
-        <Row>
-          <Col>
+      <Container  >
+        <Row >
+          <Col >
             <InfoForm //
               summonerName={summonerName}
               region={region}
               apiKey={apiKey}
+              tagline={tagline}
               setTimelines={setTimelines}
               setPage={setPage}
               setStage={setStage}
@@ -53,11 +56,13 @@ function App() {
               setMatches={setMatches}
               setMatchIds={setMatchIds}
               setPredictions={setPredictions}
+              setTagline={setTagline}
             ></InfoForm>
           </Col>
           <Col  xs={9}>
             <MatchHist  //
               summonerName={summonerName}
+              tagline={tagline}
               region={region}
               apiKey={apiKey}
               matches={matches}

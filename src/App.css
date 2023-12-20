@@ -1,3 +1,10 @@
+@font-face {
+  font-family: 'Inter';
+  src: local('Inter'), url(./assets/fonts/Inter/Inter-VariableFont_slnt\,wght.ttf) format('woff');
+  /* other formats include: 'woff2', 'truetype, 'opentype',
+                            'embedded-opentype', and 'svg' */
+}
+
 html, .App {
   text-align: center;
   background-color: ghostwhite;
@@ -28,13 +35,6 @@ html, .App {
 @font-face {
   font-family: 'Amatic_SC';
   src: local('Amatic_SC'), url(./assets/fonts/Amatic_SC/AmaticSC-Regular.ttf) format('woff');
-  /* other formats include: 'woff2', 'truetype, 'opentype',
-                            'embedded-opentype', and 'svg' */
-}
-
-@font-face {
-  font-family: 'Inter';
-  src: local('Inter'), url(./assets/fonts/Inter/Inter-VariableFont_slnt\,wght.ttf) format('woff');
   /* other formats include: 'woff2', 'truetype, 'opentype',
                             'embedded-opentype', and 'svg' */
 }
@@ -78,11 +78,3 @@ html, .App {
     transform: rotate(360deg);
   }
 } */
-
-
-@media screen and (max-width: 767px) {
-  .about {
-    width: unset;
-    position: unset;
-  }
-}

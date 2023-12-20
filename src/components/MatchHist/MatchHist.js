@@ -7,10 +7,11 @@ import config from '../../config';
 import axios from "axios";
 
 function MatchHist({summonerName, region, apiKey, matches, matchIds, stage, page,
-    setPage, setStage, setMatches, setMatchIds, 
+    setPage, setStage, setMatches, setMatchIds, tagline,
     timelines, setTimelines, predictions, setPredictions}) {
 
-    const regionDict = config["regionDict"]
+    const regionDict    = config["regionDict"]
+    const api_end       = config["my_api"]
 
     // check if we should vertically align a message in the match panel
     // (only if we haven't loaded matches yet)
@@ -102,6 +103,7 @@ function MatchHist({summonerName, region, apiKey, matches, matchIds, stage, page
             };
             let params = {
                 "summonerName": encodeURIComponent(summonerName),
+                "tagline": encodeURI(tagline),
                 "startFrom": matches.length,
                 "regionLong": regionDict[region.toUpperCase()],
                 "regionShort": region
@@ -109,7 +111,7 @@ function MatchHist({summonerName, region, apiKey, matches, matchIds, stage, page
             // alert(JSON.stringify(params))
 
             axios.post(
-                "http://127.0.0.1:5000/api/matches", params, { headers: headers }
+                api_end + "/matches", params, { headers: headers }
             )
             .then((res) => {
                 setStage("loaded")

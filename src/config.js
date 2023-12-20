@@ -49,6 +49,8 @@ const config = {
     "SG2":"asia",     "TH2":"sea",
     "TR1":"europe",   "TW2":"sea", 
     "VN2":"sea"
-  }
+  },
+  "my_api": process.env.REACT_APP_HOST_IP_ADDRESS,
+  "api_key": process.env.REACT_APP_API_KEY
 }
 export default config
