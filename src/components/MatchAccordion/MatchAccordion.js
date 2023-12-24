@@ -5,7 +5,7 @@ import { faFaceSmile, faPoo, faXmark, faRotateRight } from "@fortawesome/free-so
 import TeamDisplay from '../TeamDisplay/TeamDisplay';
 import MatchPlot from '../MatchPlot/MatchPlot';
 
-function MatchAccordion({summonerName, matchIds, matches, timelines, predictions, page}) {
+function MatchAccordion({puuid, matchIds, matches, timelines, predictions, page}) {
     
     // console.log(matches)
 
@@ -18,7 +18,7 @@ function MatchAccordion({summonerName, matchIds, matches, timelines, predictions
             let wasRemake = false
             for (const element of participants) {
                 const player = element;
-                if (player["summonerName"] === summonerName && player["win"]) {
+                if (player["puuid"] === puuid && player["win"]) {
                     didWin = true
                     if (player["gameEndedInEarlySurrender"]) {
                         wasRemake = true
@@ -72,7 +72,7 @@ function MatchAccordion({summonerName, matchIds, matches, timelines, predictions
                                 <Col className='test-col my-auto' xs={2}>{getWinPartText(didWin)}</Col>
                                 <Col className='test-col my-auto' xs={4}>
                                     <TeamDisplay
-                                    summonerName={summonerName}
+                                    puuid={puuid}
                                     participants={blue}
                                     color={"blue"}
                                     idx={idx}
@@ -84,7 +84,7 @@ function MatchAccordion({summonerName, matchIds, matches, timelines, predictions
                                 ><FontAwesomeIcon icon={faXmark} /></Col>
                                 <Col className='test-col my-auto' xs={4}>
                                     <TeamDisplay
-                                    summonerName={summonerName}
+                                    puuid={puuid}
                                     participants={red}
                                     color={"red"}
                                     idx={idx}

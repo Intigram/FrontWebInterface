@@ -6,8 +6,8 @@ import MatchAccordion from '../MatchAccordion/MatchAccordion';
 import config from '../../config';
 import axios from "axios";
 
-function MatchHist({summonerName, region, apiKey, matches, matchIds, stage, page,
-    setPage, setStage, setMatches, setMatchIds, tagline,
+function MatchHist({puuid, region, apiKey, matches, matchIds, stage, page,
+    setPage, setStage, setMatches, setMatchIds, 
     timelines, setTimelines, predictions, setPredictions}) {
 
     const regionDict    = config["regionDict"]
@@ -52,7 +52,7 @@ function MatchHist({summonerName, region, apiKey, matches, matchIds, stage, page
         if (stage === 'loaded') {                       // If we have loaded matches
             return (
             <MatchAccordion
-                summonerName={summonerName}
+                puuid={puuid}
                 matches={matches}
                 matchIds={matchIds}
                 timelines={timelines}
@@ -102,8 +102,7 @@ function MatchHist({summonerName, region, apiKey, matches, matchIds, stage, page
                 "X-Riot-Token": apiKey
             };
             let params = {
-                "summonerName": encodeURIComponent(summonerName),
-                "tagline": encodeURI(tagline),
+                "puuid": encodeURIComponent(puuid),
                 "startFrom": matches.length,
                 "regionLong": regionDict[region.toUpperCase()],
                 "regionShort": region
@@ -111,7 +110,7 @@ function MatchHist({summonerName, region, apiKey, matches, matchIds, stage, page
             // alert(JSON.stringify(params))
 
             axios.post(
-                api_end + "/matches", params, { headers: headers }
+                api_end + "/more", params, { headers: headers }
             )
             .then((res) => {
                 setStage("loaded")

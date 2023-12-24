@@ -50,7 +50,7 @@ const config = {
     "TR1":"europe",   "TW2":"sea", 
     "VN2":"sea"
   },
-  "my_api": process.env.REACT_APP_HOST_IP_ADDRESS,
-  "api_key": process.env.REACT_APP_API_KEY
+  "my_api": "http://127.0.0.1:5000/api", //process.env.REACT_APP_HOST_IP_ADDRESS,
+  "api_key": "RGAPI-a921c1c0-7e32-4a09-84aa-9686624b8e7b" //process.env.REACT_APP_API_KEY
 }
 export default config

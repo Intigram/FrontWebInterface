@@ -1,7 +1,7 @@
 import './TeamDisplay.css';
 import { Tooltip, OverlayTrigger, Row, Col, Container } from "react-bootstrap";
 
-function TeamDisplay({summonerName, participants, color, ix}) {
+function TeamDisplay({puuid, participants, color, ix}) {
 
     const r = require.context('../../assets/images/ChampIcons', false, /\.(png|jpe?g|svg|webp)$/)
     let images = {};
@@ -15,12 +15,10 @@ function TeamDisplay({summonerName, participants, color, ix}) {
 
     let items = participants.map((d, idx) => {
         let imgClassName = 'champIcon ' + color;
-        if (d["summonerName"] === summonerName) {
+        // console.log(d)
+        if (d["puuid"] === puuid) {
             imgClassName += ' player ';
         }
-        // /Users/rebeca/Documents/Projects/WinPrediction/WebInterface/Front/intigram/src/assets/images/ChampIcons/Aatrox.webp
-        // let imSrc = './assets/images/ChampIcons/' + d["championName"] + '.webp';
-        // const im = require(imSrc)
         const im = images[d["championName"] + ".webp"]
 
         return (

@@ -3,7 +3,7 @@ import { Form, Button } from "react-bootstrap";
 import axios from "axios";
 import config from '../../config';
 
-function InfoForm({summonerName, tagline, setTagline, region, apiKey, setTimelines,  
+function InfoForm({summonerName, tagline, setTagline, region, apiKey, setTimelines, setPuuid, 
     setPredictions, setPage, setStage, setSummonerName, setRegion, setMatches, setMatchIds}) {
 
     const regionOptions = config["regionOptions"]
@@ -44,6 +44,7 @@ function InfoForm({summonerName, tagline, setTagline, region, apiKey, setTimelin
         .then((res) => {
             console.log(res)
             setStage("loaded")
+            setPuuid(res.data["puuid"])
             setMatches(res.data['matches'])
             setMatchIds(res.data['matchIds'])
             setTimelines(res.data['matchTimelines'])

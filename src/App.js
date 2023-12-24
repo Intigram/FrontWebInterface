@@ -21,6 +21,7 @@ function App() {
   const [page, setPage]                 = useState(0);
   const [predictions, setPredictions]   = useState([]);
   const [tagline, setTagline]           = useState("");
+  const [puuid, setPuuid]               = useState("");
 
   return (
     <div className="App align-items-center w-100">
@@ -57,11 +58,12 @@ function App() {
               setMatchIds={setMatchIds}
               setPredictions={setPredictions}
               setTagline={setTagline}
+              setPuuid={setPuuid}
             ></InfoForm>
           </Col>
           <Col  xs={9}>
             <MatchHist  //
-              summonerName={summonerName}
+              puuid={puuid}
               tagline={tagline}
               region={region}
               apiKey={apiKey}
